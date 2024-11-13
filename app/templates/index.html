@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Base de Dados</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Análise de Base de Dados</h1>
+        
+        <!-- Formulário de envio de arquivo -->
+        <form id="file-form" enctype="multipart/form-data" method="POST">
+            <div class="form-group">
+                <label for="file-input" class="custom-file-upload">Escolher Arquivo</label>
+                <!-- Input para CSV e Excel -->
+                <input type="file" id="file-input" name="file" accept=".csv, .xlsx" class="form-control" required>
+                <div id="file-name" class="mt-2"></div> <!-- Exibe o nome do arquivo selecionado -->
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <!-- Ícone de carregamento -->
+        <div id="loading-icon" style="display: none; text-align: center;">
+            <img src="https://i.gifer.com/4V0b.gif" alt="Carregando..."> <!-- Exemplo de gif de carregamento -->
+        </div>
+
+        <h2>Gráficos Gerados</h2>
+        <div id="charts-container" class="mt-4"></div> <!-- Onde os gráficos serão exibidos -->
+        
+        <h2>Dados Processados</h2>
+        <div id="data-container" class="mt-4"></div> <!-- Onde os dados processados serão exibidos -->
+    </div>
+
+    <!-- Script externo -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
